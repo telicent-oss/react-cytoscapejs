@@ -19,6 +19,8 @@ jobs:
           node-version: "20"
           cache: "npm"
           registry-url: "https://registry.npmjs.org"
+          scope: "telicent-oss"
+      - run: npm i -g npm@latest
       - run: npm ci
       - run: npm run test:eslint
       - run: npm run test:prettier
@@ -29,9 +31,9 @@ jobs:
           PUBLISHED=$(npm view "$PKG_NAME" version 2>/dev/null || echo "0.0.0")
           if [ "$CURRENT" != "$PUBLISHED" ]; then
             echo "Version changed: $PUBLISHED → $CURRENT — publishing"
-            npm publish --provenance --access public
+            npm publish --access public --provenance
           else
             echo "Version unchanged ($CURRENT) — skipping publish"
           fi
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"
