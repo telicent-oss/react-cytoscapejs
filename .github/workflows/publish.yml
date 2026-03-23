@@ -20,7 +20,8 @@ jobs:
           cache: "npm"
           registry-url: "https://registry.npmjs.org"
       - run: npm ci
-      - run: npm test
+      - run: npm run test:eslint
+      - run: npm run test:prettier
       - name: Publish if version changed
         run: |
           PKG_NAME=$(node -p "require('./package.json').name")
