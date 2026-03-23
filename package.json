@@ -1,14 +1,14 @@
 {
-  "name": "react-cytoscapejs",
+  "name": "@telicent-oss/react-cytoscapejs",
   "version": "2.0.0",
   "description": "React-based network visualization component, using Cytoscape",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/plotly/react-cytoscapejs.git"
+    "url": "https://github.com/telicent-oss/react-cytoscapejs.git"
   },
   "bugs": {
-    "url": "https://github.com/plotly/react-cytoscapejs/issues"
+    "url": "https://github.com/telicent-oss/react-cytoscapejs/issues"
   },
   "amdName": "ReactCytoscape",
   "exports": "./dist/react-cytoscape.modern.js",
@@ -17,7 +17,7 @@
   "source": "src/index.js",
   "umd:main": "dist/react-cytoscape.umd.js",
   "unpkg": "dist/react-cytoscape.umd.js",
-  "homepage": "https://github.com/plotly/react-cytoscapejs",
+  "homepage": "https://github.com/telicent-oss/react-cytoscapejs",
   "scripts": {
     "prepare": "run-s build build:docgen",
     "build": "microbundle --globals=react=React,cytoscape=cytoscape,prop-types=PropTypes",
@@ -32,7 +32,10 @@
     "test": "run-s test:*",
     "demo": "sh scripts/demo.sh",
     "watch": "microbundle watch --globals=react=React,cytoscape=cytoscape,prop-types=PropTypes",
-    "start": "run-s watch"
+    "start": "run-s watch",
+    "bump": "npm version patch --no-git-tag-version",
+    "bump:minor": "npm version minor --no-git-tag-version",
+    "bump:major": "npm version major --no-git-tag-version"
   },
   "peerDependencies": {
     "cytoscape": "^3.2.19",
