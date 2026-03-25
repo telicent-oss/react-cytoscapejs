@@ -1,5 +1,5 @@
 {
-  "name": "react-cytoscapejs",
+  "name": "@telicent-oss/react-cytoscapejs",
   "version": "2.0.0",
   "description": "React-based network visualization component, using Cytoscape",
   "license": "MIT",
