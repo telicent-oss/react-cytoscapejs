@@ -1,6 +1,6 @@
 {
   "name": "react-cytoscapejs",
-  "version": "2.0.0",
+  "version": "2.0.0-tmp.0",
   "description": "React-based network visualization component, using Cytoscape",
   "license": "MIT",
   "repository": {
